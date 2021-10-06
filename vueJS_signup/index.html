@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VueJS Aflevering</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+
+  <div id="app">
+        <h1>Sign Up Form</h1>
+        <form @submit.prevent="accSubmit">
+
+        <label>Navn: <span class="red">*</span></label>
+        <input type="text" required v-model="navn">
+        <div v-if="navnError" class="error"> {{ navnError }}</div>
+
+        <label>Email: <span class="red">*</span></label>
+        <input type="email" required v-model="email" @blur="validateEmail">
+        <div v-if="emailError" class="error">{{ emailError }}</div>
+
+        <label>Password: <span class="red">*</span></label>
+        <input type="password" required v-model="password">
+        <div v-if="passwordError" class="error"> {{ passwordError }} </div>
+
+        <label>Gentag password: <span class="red">*</span></label>
+        <input type="password" required v-model="repassword">
+        <div v-if="repasswordError" class="error"> {{ repasswordError }}</div>
+
+        <label>Telefon: <span class="red">*</span></label>
+        <input type="text" required v-model="telefon">
+        <div v-if="telefonError" class="error"> {{ telefonError }}</div>
+
+        <label>Adresse: <span class="red">*</span></label>
+        <input type="text" required v-model="adresse">
+        <div v-if="adresseError" class="error"> {{ adresseError }}</div>
+
+        <label>Postnummer: <span class="red">*</span></label>
+        <input type="text" required v-model="postnummer">
+        <div v-if="postnummerError" class="error"> {{ postnummerError }}</div>
+
+        <div class="submit">
+        <Button>Submit form</Button>
+        </div>
+        </form>
+  </div>      
+
+    <script src="app.js"></script>
+</body>
+</html>

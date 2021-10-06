@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VueJS Aflevering</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+
+    <div id="app">
+        <h1 id="title">Nu spiller {{ name }}Drum 🥁 Kit</h1>
+        <label>Navn:</label>
+        <input type="text" v-model="name">
+        <div class="set">
+          <button @click="playSound('sounds/tom-1.mp3')"><img :src="drum1" :alt=""></button>
+          <button @click="playSound('sounds/tom-2.mp3')"><img :src="drum2" :alt=""></button>
+          <button @click="playSound('sounds/tom-3.mp3')"><img :src="drum3" :alt=""></button>
+          <button @click="playSound('sounds/tom-4.mp3')"><img :src="drum4" :alt=""></button>
+          <button @click="playSound('sounds/crash.mp3')"><img :src="drum5" :alt=""></button>
+          <button @click="playSound('sounds/kick-bass.mp3')"><img :src="drum6" :alt=""></button>
+          <button @click="playSound('sounds/snare.mp3')"><img :src="drum7" :alt=""></button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
